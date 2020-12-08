@@ -65,6 +65,7 @@ import { baseFont } from ./utility.js;
 
 ### Classes
 **Property** --> Like variables, attached to classes/objects.
+
 ES6
 ```javascript
 constructor() {
@@ -78,6 +79,7 @@ myProperty = 'value';
 ```
 
 **Methods** --> Like functions, attached to classes/objects.
+
 ES6
 ```javascript
 myMethod() { ... }
@@ -112,6 +114,8 @@ let halfPrice = discount50(10, 20, 30, 50, 150);
 
 ### Destructuring
 Extract array elements or object properties to store them in variables
+
+Array Destructuring
 ```javascript
 let a, b, rest;
 
@@ -124,4 +128,35 @@ console.log(b); // 20
 [a, b, ...rest] = [10, 20, 30, 40, 50];
 
 console.log(rest); // [30,40,50]
+```
+
+Object Destructuring
+```javascript
+{name} = {name: 'Caue', age: 23}
+
+console.log(name); // Caue
+
+console.log(age); // undefined
+```
+
+### Reference and Primitive Types
+**Primitive types**: `integer`, `boolean`, `float`, ...
+
+**Reference**: `array`, `list`, ...
+
+```javascript
+const number = 1;  // Primitive type
+
+const secondNumber = number; // Reference (point to memory location for number variable)
+```
+
+Reference is very danger on React, because can change a object in a chain effect, modifying components should not be modified.
+Therefore, is used **Spread Operator** for "copy" a object without changing it.
+
+```javascript
+const person = {
+    name: 'Chloe'
+};
+
+const otherPerson = { ...person };
 ```
